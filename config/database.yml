@@ -17,16 +17,16 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: ec2-99-81-238-134.eu-west-1.compute.amazonaws.com
-  username: zhrifjqiepqakn
-  password: ee34f7039dcbcc2e4797b25ec8d3ac43d53a055df83ed20f927c1450ed623180
+  host: localhost
+  username: postgres
+  password: 12345
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
-  database: d8p951bfd9k5l5
+  database: railsopenlayer_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -58,6 +58,9 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: railsopenlayer_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

@@ -37,7 +37,7 @@ class UsersController < ApplicationController
      'lat'=>p['lat'],
      'lng'=>p['lng'],
      'add'=>p['add'],
-     'pos'=>'20'
+     'pos'=>20+(i*10)
     }
       @Arry[i] = {'type'=>'Feature','geometry'=>{'type'=>'Point','coordinates'=>[p['lng'], p['lat']]},'properties'=>@properties}
       i += 1
